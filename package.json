@@ -1,8 +1,8 @@
 {
-  "name": "front-end-starter",
+  "name": "project",
   "version": "1.1.0",
   "private": true,
-  "description": "A starter template repo for 'front-end' students",
+  "description": "CIS 177 project",
   "main": "index.js",
   "scripts": {
     "start": "browser-sync start --server --files '**/*.html, **/*.css, **/**.js'",
@@ -12,7 +12,7 @@
     "html-css-js",
     "student"
   ],
-  "author": "Manav Misra",
+  "author": "Nathan Shelton",
   "license": "MIT",
   "devDependencies": {
     "browser-sync": "^2.26.14",
