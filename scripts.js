@@ -1,7 +1,7 @@
 const opp = document.getElementById('opp');
 const user = document.getElementById('user');
 
-// Todo: IS THERE A WAY TO MAKE THIS 'CLEANER'?!
+// Todo: IS THERE A WAY TO MAKE THIS 'CLEANER'?! Would a Switch case work?
 
 let oppLife = 20;
 opp.innerText = oppLife;
