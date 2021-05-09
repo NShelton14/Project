@@ -14,8 +14,10 @@ document.getElementById('userPlus').addEventListener('click', event => {
 document.getElementById('userMinus').addEventListener('click', event => {
   event.preventDefault();
 
-  userLife -= 1;
-  user.innerText = userLife;
+  if (userLife > 0) {
+    userLife -= 1;
+    user.innerText = userLife;
+  }
 });
 
 let oppLife = 20;
@@ -31,6 +33,8 @@ document.getElementById('oppPlus').addEventListener('click', event => {
 document.getElementById('oppMinus').addEventListener('click', event => {
   event.preventDefault();
 
-  oppLife -= 1;
-  opp.innerText = oppLife;
+  if (oppLife > 0) {
+    oppLife -= 1;
+    opp.innerText = oppLife;
+  }
 });
