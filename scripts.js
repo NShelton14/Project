@@ -39,8 +39,9 @@ document.getElementById('oppPlusTen').addEventListener('click', event => {
 document.getElementById('oppPlusIn').addEventListener('click', event => {
   event.preventDefault();
 
-  const oppInput = document.getElementById('oppInput');
-  oppLife += oppInput;
+  const oppPlusInput = document.getElementById('oppPlusInput').value;
+  console.log(oppPlusInput);
+  oppLife += +oppPlusInput;
   opp.innerText = oppLife;
 });
 
@@ -71,9 +72,9 @@ document.getElementById('oppMinusTen').addEventListener('click', event => {
 document.getElementById('oppMinusIn').addEventListener('click', event => {
   event.preventDefault();
 
-  const oppInput = document.getElementById('oppInput');
-  if (oppLife > 0 && oppLife - oppInput >= 0) {
-    oppLife -= oppInput;
+  const oppMinusInput = document.getElementById('oppMinusInput').value;
+  if (oppLife > 0 && oppLife - oppMinusInput >= 0) {
+    oppLife -= oppMinusInput;
     opp.innerText = oppLife;
   } else if (oppLife > 0) {
     oppLife = 0;
@@ -117,8 +118,8 @@ document.getElementById('userPlusTen').addEventListener('click', event => {
 document.getElementById('userPlusIn').addEventListener('click', event => {
   event.preventDefault();
 
-  const userInput = document.getElementById('userInput');
-  userLife += userInput;
+  const userPlusInput = document.getElementById('userPlusInput').value;
+  userLife += +userPlusInput;
   user.innerText = userLife;
 });
 
@@ -149,9 +150,9 @@ document.getElementById('userMinusTen').addEventListener('click', event => {
 document.getElementById('userMinusIn').addEventListener('click', event => {
   event.preventDefault();
 
-  const userInput = document.getElementById('userInput');
-  if (userLife > 0 && userLife - userInput >= 0) {
-    userLife -= userInput;
+  const userMinusInput = document.getElementById('userMinusInput').value;
+  if (userLife > 0 && userLife - userMinusInput >= 0) {
+    userLife -= userMinusInput;
     user.innerText = userLife;
   } else if (userLife > 0) {
     userLife = 0;
