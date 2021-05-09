@@ -2,12 +2,7 @@ const user = document.getElementById('user');
 const opp = document.getElementById('opp');
 
 let userLife = 20;
-const oppLife = 20;
-
-// Todo: Turn the inner text and buttons into a renderList
-
 user.innerText = userLife;
-opp.innerText = oppLife;
 
 document.getElementById('userPlus').addEventListener('click', event => {
   event.preventDefault();
@@ -21,4 +16,21 @@ document.getElementById('userMinus').addEventListener('click', event => {
 
   userLife -= 1;
   user.innerText = userLife;
+});
+
+let oppLife = 20;
+opp.innerText = oppLife;
+
+document.getElementById('oppPlus').addEventListener('click', event => {
+  event.preventDefault();
+
+  oppLife += 1;
+  opp.innerText = oppLife;
+});
+
+document.getElementById('oppMinus').addEventListener('click', event => {
+  event.preventDefault();
+
+  oppLife -= 1;
+  opp.innerText = oppLife;
 });
