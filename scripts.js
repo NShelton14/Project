@@ -35,7 +35,7 @@ document.getElementById('oppPlusTen').addEventListener('click', event => {
   oppLife += 10;
   opp.innerText = oppLife;
 });
-// Todo: Add number input to oppLife
+
 document.getElementById('oppPlusIn').addEventListener('click', event => {
   event.preventDefault();
 
@@ -68,7 +68,7 @@ document.getElementById('oppMinusTen').addEventListener('click', event => {
     opp.innerText = oppLife;
   }
 });
-// Todo: Subtract number input from oppLife
+
 document.getElementById('oppMinusIn').addEventListener('click', event => {
   event.preventDefault();
 
@@ -114,7 +114,7 @@ document.getElementById('userPlusTen').addEventListener('click', event => {
   userLife += 10;
   user.innerText = userLife;
 });
-// Todo: Add number input to userLife
+
 document.getElementById('userPlusIn').addEventListener('click', event => {
   event.preventDefault();
 
@@ -146,7 +146,7 @@ document.getElementById('userMinusTen').addEventListener('click', event => {
     user.innerText = userLife;
   }
 });
-// Todo: Subtract number input from userLife
+
 document.getElementById('userMinusIn').addEventListener('click', event => {
   event.preventDefault();
 
