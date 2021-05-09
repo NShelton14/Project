@@ -1,6 +1,8 @@
 const opp = document.getElementById('opp');
 const user = document.getElementById('user');
 
+// Todo: IS THERE A WAY TO MAKE THIS 'CLEANER'?!
+
 let oppLife = 20;
 opp.innerText = oppLife;
 
@@ -92,6 +94,63 @@ document.getElementById('userMinus').addEventListener('click', event => {
 
   if (userLife > 0) {
     userLife -= 1;
+    user.innerText = userLife;
+  }
+});
+
+document.getElementById('userPlusFive').addEventListener('click', event => {
+  event.preventDefault();
+
+  userLife += 5;
+  user.innerText = userLife;
+});
+
+document.getElementById('userPlusTen').addEventListener('click', event => {
+  event.preventDefault();
+
+  userLife += 10;
+  user.innerText = userLife;
+});
+// Todo: Add number input to userLife
+document.getElementById('userPlusIn').addEventListener('click', event => {
+  event.preventDefault();
+
+  userLife += event.target.value;
+  user.innerText = userLife;
+});
+
+document.getElementById('userMinusFive').addEventListener('click', event => {
+  event.preventDefault();
+
+  if (userLife > 0 && userLife - 5 >= 0) {
+    userLife -= 5;
+    user.innerText = userLife;
+  } else if (userLife > 0) {
+    userLife = 0;
+    user.innerText = userLife;
+  }
+});
+
+document.getElementById('userMinusTen').addEventListener('click', event => {
+  event.preventDefault();
+
+  if (userLife > 0 && userLife - 10 >= 0) {
+    userLife -= 10;
+    user.innerText = userLife;
+  } else if (userLife > 0) {
+    userLife = 0;
+    user.innerText = userLife;
+  }
+});
+// Todo: Subtract number input from userLife
+document.getElementById('userMinusIn').addEventListener('click', event => {
+  event.preventDefault();
+
+  if (userLife > 0 && userLife - event.target.value >= 0) {
+    userLife -= event.target.value;
+    user.innerText = userLife;
+  } else if (userLife > 0) {
+    userLife = 0;
     user.innerText = userLife;
   }
 });
