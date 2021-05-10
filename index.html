@@ -14,45 +14,71 @@
     <title>MTG Health Counter</title>
   </head>
   <body>
-    <form>
-      <h4>Opponent</h4>
-      <p id="opp"></p>
-      <button id="oppPlus">+</button>
-      <button id="oppMinus">-</button>
+    <div id="oppDiv" class="float--top">
       <div>
-        <button id="oppPlusFive">+5</button>
-        <button id="oppPlusTen">+10</button>
-        <button id="oppPlusIn">+...</button>
-        <input type="number" id="oppPlusInput" />
+        <form>
+          <button id="oppRed" class="red"></button>
+          <button id="oppGreen" class="green"></button>
+          <button id="oppBlack" class="black"></button>
+          <button id="oppWhite" class="white"></button>
+          <button id="oppBlue" class="blue"></button>
+        </form>
       </div>
-      <div>
-        <button id="oppMinusFive">-5</button>
-        <button id="oppMinusTen">-10</button>
-        <button id="oppMinusIn">-...</button>
-        <input type="number" id="oppMinusInput" />
-      </div>
-    </form>
 
-    <hr />
+      <div>
+        <form>
+          <h4>Opponent</h4>
+          <p id="opp"></p>
+          <button id="oppPlus">+</button>
+          <button id="oppMinus">-</button>
+          <div>
+            <button id="oppPlusFive">+5</button>
+            <button id="oppPlusTen">+10</button>
+            <button id="oppPlusIn">+...</button>
+            <input type="number" id="oppPlusInput" />
+          </div>
+          <div>
+            <button id="oppMinusFive">-5</button>
+            <button id="oppMinusTen">-10</button>
+            <button id="oppMinusIn">-...</button>
+            <input type="number" id="oppMinusInput" />
+          </div>
+        </form>
+      </div>
+    </div>
 
-    <form>
-      <h4>User</h4>
-      <p id="user"></p>
-      <button id="userPlus">+</button>
-      <button id="userMinus">-</button>
+    <div id="userDiv" class="float--bottom">
       <div>
-        <button id="userPlusFive">+5</button>
-        <button id="userPlusTen">+10</button>
-        <button id="userPlusIn">+...</button>
-        <input type="number" id="userPlusInput" />
+        <form>
+          <button id="userRed" class="red"></button>
+          <button id="userGreen" class="green"></button>
+          <button id="userBlack" class="black"></button>
+          <button id="userWhite" class="white"></button>
+          <button id="userBlue" class="blue"></button>
+        </form>
       </div>
+
       <div>
-        <button id="userMinusFive">-5</button>
-        <button id="userMinusTen">-10</button>
-        <button id="userMinusIn">-...</button>
-        <input type="number" id="userMinusInput" />
+        <form>
+          <h4>User</h4>
+          <p id="user"></p>
+          <button id="userPlus">+</button>
+          <button id="userMinus">-</button>
+          <div>
+            <button id="userPlusFive">+5</button>
+            <button id="userPlusTen">+10</button>
+            <button id="userPlusIn">+...</button>
+            <input type="number" id="userPlusInput" />
+          </div>
+          <div>
+            <button id="userMinusFive">-5</button>
+            <button id="userMinusTen">-10</button>
+            <button id="userMinusIn">-...</button>
+            <input type="number" id="userMinusInput" />
+          </div>
+        </form>
       </div>
-    </form>
+    </div>
     <script src="./scripts.js" type="module"></script>
   </body>
 </html>

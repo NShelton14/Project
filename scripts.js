@@ -6,6 +6,51 @@ const user = document.getElementById('user');
 let oppLife = 20;
 opp.innerText = oppLife;
 
+document.getElementById('oppRed').addEventListener('click', event => {
+  event.preventDefault();
+
+  document
+    .getElementById('oppDiv')
+    .classList.remove('green', 'black', 'white', 'blue');
+  document.getElementById('oppDiv').classList.add('red');
+});
+
+document.getElementById('oppGreen').addEventListener('click', event => {
+  event.preventDefault();
+
+  document
+    .getElementById('oppDiv')
+    .classList.remove('red', 'black', 'white', 'blue');
+  document.getElementById('oppDiv').classList.add('green');
+});
+
+document.getElementById('oppBlack').addEventListener('click', event => {
+  event.preventDefault();
+
+  document
+    .getElementById('oppDiv')
+    .classList.remove('red', 'green', 'white', 'blue');
+  document.getElementById('oppDiv').classList.add('black');
+});
+
+document.getElementById('oppWhite').addEventListener('click', event => {
+  event.preventDefault();
+
+  document
+    .getElementById('oppDiv')
+    .classList.remove('red', 'green', 'black', 'blue');
+  document.getElementById('oppDiv').classList.add('white');
+});
+
+document.getElementById('oppBlue').addEventListener('click', event => {
+  event.preventDefault();
+
+  document
+    .getElementById('oppDiv')
+    .classList.remove('red', 'green', 'black', 'white');
+  document.getElementById('oppDiv').classList.add('blue');
+});
+
 document.getElementById('oppPlus').addEventListener('click', event => {
   event.preventDefault();
 
@@ -84,6 +129,51 @@ document.getElementById('oppMinusIn').addEventListener('click', event => {
 
 let userLife = 20;
 user.innerText = userLife;
+
+document.getElementById('userRed').addEventListener('click', event => {
+  event.preventDefault();
+
+  document
+    .getElementById('userDiv')
+    .classList.remove('green', 'black', 'white', 'blue');
+  document.getElementById('userDiv').classList.add('red');
+});
+
+document.getElementById('userGreen').addEventListener('click', event => {
+  event.preventDefault();
+
+  document
+    .getElementById('userDiv')
+    .classList.remove('red', 'black', 'white', 'blue');
+  document.getElementById('userDiv').classList.add('green');
+});
+
+document.getElementById('userBlack').addEventListener('click', event => {
+  event.preventDefault();
+
+  document
+    .getElementById('userDiv')
+    .classList.remove('red', 'green', 'white', 'blue');
+  document.getElementById('userDiv').classList.add('black');
+});
+
+document.getElementById('userWhite').addEventListener('click', event => {
+  event.preventDefault();
+
+  document
+    .getElementById('userDiv')
+    .classList.remove('red', 'green', 'black', 'blue');
+  document.getElementById('userDiv').classList.add('white');
+});
+
+document.getElementById('userBlue').addEventListener('click', event => {
+  event.preventDefault();
+
+  document
+    .getElementById('userDiv')
+    .classList.remove('red', 'green', 'black', 'white');
+  document.getElementById('userDiv').classList.add('blue');
+});
 
 document.getElementById('userPlus').addEventListener('click', event => {
   event.preventDefault();
