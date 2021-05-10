@@ -4,6 +4,16 @@ body {
   font-size: 10px;
 }
 
+.float--top {
+  border-bottom: 1px solid black;
+  float: top;
+}
+
+.float--bottom {
+  border-top: 1px solid black;
+  float: bottom;
+}
+
 .red {
   background-color: red;
 }
