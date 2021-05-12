@@ -34,47 +34,59 @@ oppMath.querySelectorAll('button').forEach(button => {
 
     switch (buttonId) {
       case 'oppPlus':
-        opp.innerText = oppLife += 1;
+        oppLife += 1;
+        opp.innerText = oppLife;
         break;
       case 'oppMinus':
         if (oppLife > 0) {
-          opp.innerText = oppLife -= 1;
+          oppLife -= 1;
+          opp.innerText = oppLife;
         }
         break;
       case 'oppPlusFive':
-        opp.innerText = oppLife += 5;
+        oppLife += 5;
+        opp.innerText = oppLife;
         break;
       case 'oppPlusTen':
-        opp.innerText = oppLife += 10;
+        oppLife += 10;
+        opp.innerText = oppLife;
         break;
-      case 'oppPlusIn':
+      case 'oppPlusIn': {
         const oppPlusInput = document.getElementById('oppPlusInput').value;
-        opp.innerText = oppLife += +oppPlusInput;
+        oppLife += +oppPlusInput;
+        opp.innerText = oppLife;
         break;
+      }
       case 'oppMinusFive':
         if (oppLife > 0 && oppLife - 5 >= 0) {
-          opp.innerText = oppLife -= 5;
+          oppLife -= 5;
+          opp.innerText = oppLife;
         } else if (oppLife > 0) {
-          opp.innerText = oppLife = 0;
+          oppLife = 0;
+          opp.innerText = oppLife;
         }
         break;
       case 'oppMinusTen':
         if (oppLife > 0 && oppLife - 10 >= 0) {
-          opp.innerText = oppLife -= 10;
+          oppLife -= 10;
+          opp.innerText = oppLife;
         } else if (oppLife > 0) {
-          opp.innerText = oppLife = 0;
+          oppLife = 0;
+          opp.innerText = oppLife;
         }
         break;
-      case 'oppMinusIn':
+      case 'oppMinusIn': {
         const oppMinusInput = document.getElementById('oppMinusInput').value;
         if (oppLife > 0 && oppLife - oppMinusInput >= 0) {
-          opp.innerText = oppLife -= oppMinusInput;
+          oppLife -= oppMinusInput;
+          opp.innerText = oppLife;
         } else if (oppLife > 0) {
-          opp.innerText = oppLife = 0;
+          oppLife = 0;
+          opp.innerText = oppLife;
         }
         break;
+      }
       default:
-        console.log('Hello World');
         break;
     }
   });
@@ -98,77 +110,68 @@ userColor.querySelectorAll('button').forEach(button => {
   });
 });
 
-document.getElementById('userPlus').addEventListener('click', event => {
-  event.preventDefault();
+userMath.querySelectorAll('button').forEach(button => {
+  button.addEventListener('click', event => {
+    event.preventDefault();
 
-  userLife += 1;
-  user.innerText = userLife;
-});
+    const buttonId = event.target.id;
 
-document.getElementById('userMinus').addEventListener('click', event => {
-  event.preventDefault();
-
-  if (userLife > 0) {
-    userLife -= 1;
-    user.innerText = userLife;
-  }
-});
-
-document.getElementById('userPlusFive').addEventListener('click', event => {
-  event.preventDefault();
-
-  userLife += 5;
-  user.innerText = userLife;
-});
-
-document.getElementById('userPlusTen').addEventListener('click', event => {
-  event.preventDefault();
-
-  userLife += 10;
-  user.innerText = userLife;
-});
-
-document.getElementById('userPlusIn').addEventListener('click', event => {
-  event.preventDefault();
-
-  const userPlusInput = document.getElementById('userPlusInput').value;
-  userLife += +userPlusInput;
-  user.innerText = userLife;
-});
-
-document.getElementById('userMinusFive').addEventListener('click', event => {
-  event.preventDefault();
-
-  if (userLife > 0 && userLife - 5 >= 0) {
-    userLife -= 5;
-    user.innerText = userLife;
-  } else if (userLife > 0) {
-    userLife = 0;
-    user.innerText = userLife;
-  }
-});
-
-document.getElementById('userMinusTen').addEventListener('click', event => {
-  event.preventDefault();
-
-  if (userLife > 0 && userLife - 10 >= 0) {
-    userLife -= 10;
-    user.innerText = userLife;
-  } else if (userLife > 0) {
-    userLife = 0;
-    user.innerText = userLife;
-  }
-});
-
-document.getElementById('userMinusIn').addEventListener('click', event => {
-  event.preventDefault();
-
-  const userMinusInput = document.getElementById('userMinusInput').value;
-  if (userLife > 0 && userLife - userMinusInput >= 0) {
-    userLife -= userMinusInput;
-    user.innerText = userLife;
-  } else if (userLife > 0) {
-    userLife = 0;
-    user.innerText = userLife;
-  }
+    switch (buttonId) {
+      case 'userPlus':
+        userLife += 1;
+        user.innerText = userLife;
+        break;
+      case 'userMinus':
+        if (userLife > 0) {
+          userLife -= 1;
+          user.innerText = userLife;
+        }
+        break;
+      case 'userPlusFive':
+        userLife += 5;
+        user.innerText = userLife;
+        break;
+      case 'userPlusTen':
+        userLife += 10;
+        user.innerText = userLife;
+        break;
+      case 'userPlusIn': {
+        const userPlusInput = document.getElementById('userPlusInput').value;
+        userLife += +userPlusInput;
+        user.innerText = userLife;
+        break;
+      }
+      case 'userMinusFive':
+        if (userLife > 0 && userLife - 5 >= 0) {
+          userLife -= 5;
+          user.innerText = userLife;
+        } else if (userLife > 0) {
+          userLife = 0;
+          user.innerText = userLife;
+        }
+        break;
+      case 'userMinusTen':
+        if (userLife > 0 && userLife - 10 >= 0) {
+          userLife -= 10;
+          user.innerText = userLife;
+        } else if (userLife > 0) {
+          userLife = 0;
+          user.innerText = userLife;
+        }
+        break;
+      case 'userMinusIn': {
+        const userMinusInput = document.getElementById('userMinusInput').value;
+        if (userLife > 0 && userLife - userMinusInput >= 0) {
+          userLife -= userMinusInput;
+          user.innerText = userLife;
+        } else if (userLife > 0) {
+          userLife = 0;
+          user.innerText = userLife;
+        }
+        break;
+      }
+      default:
+        break;
+    }
+  });
 });
