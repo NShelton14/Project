@@ -1,14 +1,16 @@
 const opp = document.getElementById('opp');
 const user = document.getElementById('user');
 const oppDiv = document.getElementById('oppDiv');
+const oppColor = document.getElementById('oppColor');
 const userDiv = document.getElementById('userDiv');
+const userColor = document.getElementById('userColor');
 const colors = ['red', 'green', 'black', 'white', 'blue'];
 // Todo: IS THERE A WAY TO MAKE THIS 'CLEANER'?! Would a Switch case work?
 
 let oppLife = 20;
 opp.innerText = oppLife;
 
-oppDiv.querySelectorAll('button').forEach(button => {
+oppColor.querySelectorAll('button').forEach(button => {
   button.addEventListener('click', event => {
     event.preventDefault();
     const divColor = event.target.className;
@@ -102,7 +104,7 @@ document.getElementById('oppMinusIn').addEventListener('click', event => {
 let userLife = 20;
 user.innerText = userLife;
 
-userDiv.querySelectorAll('button').forEach(button => {
+userColor.querySelectorAll('button').forEach(button => {
   button.addEventListener('click', event => {
     event.preventDefault();
     const divColor = event.target.className;
