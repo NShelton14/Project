@@ -1,11 +1,12 @@
 const opp = document.getElementById('opp');
-const user = document.getElementById('user');
 const oppDiv = document.getElementById('oppDiv');
 const oppColor = document.getElementById('oppColor');
+const oppMath = document.getElementById('oppMath');
+const user = document.getElementById('user');
 const userDiv = document.getElementById('userDiv');
 const userColor = document.getElementById('userColor');
+const userMath = document.getElementById('userMath');
 const colors = ['red', 'green', 'black', 'white', 'blue'];
-// Todo: IS THERE A WAY TO MAKE THIS 'CLEANER'?! Would a Switch case work?
 
 let oppLife = 20;
 opp.innerText = oppLife;
@@ -25,80 +26,58 @@ oppColor.querySelectorAll('button').forEach(button => {
   });
 });
 
-document.getElementById('oppPlus').addEventListener('click', event => {
-  event.preventDefault();
+oppMath.querySelectorAll('button').forEach(button => {
+  button.addEventListener('click', event => {
+    event.preventDefault();
 
-  oppLife += 1;
-  opp.innerText = oppLife;
-});
+    const buttonId = event.target.id;
 
-document.getElementById('oppMinus').addEventListener('click', event => {
-  event.preventDefault();
-
-  if (oppLife > 0) {
-    oppLife -= 1;
-    opp.innerText = oppLife;
-  }
-});
-
-document.getElementById('oppPlusFive').addEventListener('click', event => {
-  event.preventDefault();
-
-  oppLife += 5;
-  opp.innerText = oppLife;
-});
-
-document.getElementById('oppPlusTen').addEventListener('click', event => {
-  event.preventDefault();
-
-  oppLife += 10;
-  opp.innerText = oppLife;
-});
-
-document.getElementById('oppPlusIn').addEventListener('click', event => {
-  event.preventDefault();
-
-  const oppPlusInput = document.getElementById('oppPlusInput').value;
-  console.log(oppPlusInput);
-  oppLife += +oppPlusInput;
-  opp.innerText = oppLife;
-});
-
-document.getElementById('oppMinusFive').addEventListener('click', event => {
-  event.preventDefault();
-
-  if (oppLife > 0 && oppLife - 5 >= 0) {
-    oppLife -= 5;
-    opp.innerText = oppLife;
-  } else if (oppLife > 0) {
-    oppLife = 0;
-    opp.innerText = oppLife;
-  }
-});
-
-document.getElementById('oppMinusTen').addEventListener('click', event => {
-  event.preventDefault();
-
-  if (oppLife > 0 && oppLife - 10 >= 0) {
-    oppLife -= 10;
-    opp.innerText = oppLife;
-  } else if (oppLife > 0) {
-    oppLife = 0;
-    opp.innerText = oppLife;
-  }
-});
-
-document.getElementById('oppMinusIn').addEventListener('click', event => {
-  event.preventDefault();
-
-  const oppMinusInput = document.getElementById('oppMinusInput').value;
-  if (oppLife > 0 && oppLife - oppMinusInput >= 0) {
-    oppLife -= oppMinusInput;
-    opp.innerText = oppLife;
-  } else if (oppLife > 0) {
-    oppLife = 0;
-    opp.innerText = oppLife;
-  }
+    switch (buttonId) {
+      case 'oppPlus':
+        opp.innerText = oppLife += 1;
+        break;
+      case 'oppMinus':
+        if (oppLife > 0) {
+          opp.innerText = oppLife -= 1;
+        }
+        break;
+      case 'oppPlusFive':
+        opp.innerText = oppLife += 5;
+        break;
+      case 'oppPlusTen':
+        opp.innerText = oppLife += 10;
+        break;
+      case 'oppPlusIn':
+        const oppPlusInput = document.getElementById('oppPlusInput').value;
+        opp.innerText = oppLife += +oppPlusInput;
+        break;
+      case 'oppMinusFive':
+        if (oppLife > 0 && oppLife - 5 >= 0) {
+          opp.innerText = oppLife -= 5;
+        } else if (oppLife > 0) {
+          opp.innerText = oppLife = 0;
+        }
+        break;
+      case 'oppMinusTen':
+        if (oppLife > 0 && oppLife - 10 >= 0) {
+          opp.innerText = oppLife -= 10;
+        } else if (oppLife > 0) {
+          opp.innerText = oppLife = 0;
+        }
+        break;
+      case 'oppMinusIn':
+        const oppMinusInput = document.getElementById('oppMinusInput').value;
+        if (oppLife > 0 && oppLife - oppMinusInput >= 0) {
+          opp.innerText = oppLife -= oppMinusInput;
+        } else if (oppLife > 0) {
+          opp.innerText = oppLife = 0;
+        }
+        break;
+      default:
+        console.log('Hello World');
+        break;
+    }
+  });
 });
 
 let userLife = 20;
