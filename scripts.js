@@ -15,7 +15,7 @@ document
   .forEach(button => {
     button.addEventListener('click', event => {
       event.preventDefault();
-      const divColor = event.target.className;
+      const divColor = event.target.className.split(' ', 1);
       // Selecting class name instead of using id
       colors
         .filter(color => color !== divColor)
@@ -95,6 +95,11 @@ document
           }
           break;
         }
+        case 'oppReset':
+          document.getElementById('oppForm').reset();
+          oppLife = 20;
+          opp.innerText = oppLife;
+          break;
         default:
           break;
       }
@@ -112,7 +117,7 @@ document
   .forEach(button => {
     button.addEventListener('click', event => {
       event.preventDefault();
-      const divColor = event.target.className;
+      const divColor = event.target.className.split(' ', 1);
 
       colors
         .filter(color => color !== divColor)
@@ -193,6 +198,11 @@ document
           }
           break;
         }
+        case 'userReset':
+          document.getElementById('userForm').reset();
+          userLife = 20;
+          user.innerText = userLife;
+          break;
         default:
           break;
       }

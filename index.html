@@ -14,61 +14,67 @@
     <title>MTG Health Counter</title>
   </head>
   <body>
-    <div id="oppDiv" class="float--top white">
-      <div id="oppColor">
-        <button class="red"></button>
-        <button class="green"></button>
-        <button class="black"></button>
-        <button class="white"></button>
-        <button class="blue"></button>
+    <div id="oppDiv" class="split bottom white">
+      <div id="oppColor" class="">
+        <button class="red button--jumbo"></button>
+        <button class="green button--jumbo"></button>
+        <button class="black button--jumbo"></button>
+        <button class="white button--jumbo"></button>
+        <button class="blue button--jumbo"></button>
       </div>
 
-      <div id="oppMath">
-        <h4>Opponent</h4>
-        <p id="opp"></p>
-        <button id="oppPlus">+</button>
-        <button id="oppMinus">-</button>
-        <div>
-          <button id="oppPlusFive">+5</button>
-          <button id="oppPlusTen">+10</button>
-          <button id="oppPlusIn">+...</button>
-          <input type="number" id="oppPlusInput" />
-        </div>
-        <div>
-          <button id="oppMinusFive">-5</button>
-          <button id="oppMinusTen">-10</button>
-          <button id="oppMinusIn">-...</button>
-          <input type="number" id="oppMinusInput" />
-        </div>
+      <div id="oppMath" class="centered-opp">
+        <form id="oppForm">
+          <h4>Opponent</h4>
+          <p id="opp"></p>
+          <button id="oppPlus">+</button>
+          <button id="oppMinus">-</button>
+          <button type="reset" id="oppReset">Reset</button>
+          <div>
+            <button id="oppPlusFive">+5</button>
+            <button id="oppPlusTen">+10</button>
+            <button id="oppPlusIn">+...</button>
+            <input type="number" id="oppPlusInput" />
+          </div>
+          <div>
+            <button id="oppMinusFive">-5</button>
+            <button id="oppMinusTen">-10</button>
+            <button id="oppMinusIn">-...</button>
+            <input type="number" id="oppMinusInput" />
+          </div>
+        </form>
       </div>
     </div>
 
-    <div id="userDiv" class="float--bottom white">
+    <div id="userDiv" class="split top white">
       <div id="userColor">
-        <button class="red"></button>
-        <button class="green"></button>
-        <button class="black"></button>
-        <button class="white"></button>
-        <button class="blue"></button>
+        <button class="red button--jumbo"></button>
+        <button class="green button--jumbo"></button>
+        <button class="black button--jumbo"></button>
+        <button class="white button--jumbo"></button>
+        <button class="blue button--jumbo"></button>
       </div>
 
-      <div id="userMath">
-        <h4>User</h4>
-        <p id="user"></p>
-        <button id="userPlus">+</button>
-        <button id="userMinus">-</button>
-        <div>
-          <button id="userPlusFive">+5</button>
-          <button id="userPlusTen">+10</button>
-          <button id="userPlusIn">+...</button>
-          <input type="number" id="userPlusInput" />
-        </div>
-        <div>
-          <button id="userMinusFive">-5</button>
-          <button id="userMinusTen">-10</button>
-          <button id="userMinusIn">-...</button>
-          <input type="number" id="userMinusInput" />
-        </div>
+      <div id="userMath" class="centered-user">
+        <form id="userForm">
+          <h4>User</h4>
+          <p id="user"></p>
+          <button id="userPlus">+</button>
+          <button id="userMinus">-</button>
+          <button type="reset" id="userReset">Reset</button>
+          <div>
+            <button id="userPlusFive">+5</button>
+            <button id="userPlusTen">+10</button>
+            <button id="userPlusIn">+...</button>
+            <input type="number" id="userPlusInput" />
+          </div>
+          <div>
+            <button id="userMinusFive">-5</button>
+            <button id="userMinusTen">-10</button>
+            <button id="userMinusIn">-...</button>
+            <input type="number" id="userMinusInput" />
+          </div>
+        </form>
       </div>
     </div>
     <script src="./scripts.js" type="module"></script>
