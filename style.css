@@ -63,32 +63,32 @@ input {
   background-color: red;
   color: whitesmoke;
   text-shadow: 3px 3px rgb(60, 60, 60);
-  transition: background-color 0.3s;
+  transition: background-color 0.5s;
 }
 
 .green {
   background-color: green;
   color: whitesmoke;
   text-shadow: 3px 3px rgb(60, 60, 60);
-  transition: background-color 0.3s;
+  transition: background-color 0.5s;
 }
 
 .black {
   background-color: black;
   color: whitesmoke;
   text-shadow: 3px 3px rgb(100, 100, 100);
-  transition: background-color 0.3s;
+  transition: background-color 0.5s;
 }
 
 .white {
   background-color: white;
   text-shadow: 3px 3px rgb(190, 190, 190);
-  transition: background-color 0.3s;
+  transition: background-color 0.5s;
 }
 
 .blue {
   background-color: blue;
   color: whitesmoke;
   text-shadow: 3px 3px black;
-  transition: background-color 0.3s;
+  transition: background-color 0.5s;
 }
