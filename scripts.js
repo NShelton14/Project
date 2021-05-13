@@ -1,251 +1,200 @@
 const opp = document.getElementById('opp');
+const oppDiv = document.getElementById('oppDiv');
 const user = document.getElementById('user');
+const userDiv = document.getElementById('userDiv');
+const colors = ['red', 'green', 'black', 'white', 'blue'];
 
-// Todo: IS THERE A WAY TO MAKE THIS 'CLEANER'?! Would a Switch case work?
-
+// Opponent life starting amount
 let oppLife = 20;
 opp.innerText = oppLife;
 
-document.getElementById('oppRed').addEventListener('click', event => {
-  event.preventDefault();
+// Opponent button color selector
+document
+  .getElementById('oppColor')
+  .querySelectorAll('button')
+  .forEach(button => {
+    button.addEventListener('click', event => {
+      event.preventDefault();
+      const divColor = event.target.className;
+      // Selecting class name instead of using id
+      colors
+        .filter(color => color !== divColor)
+        .forEach(color => {
+          oppDiv.classList.remove(color);
+        });
 
-  document
-    .getElementById('oppDiv')
-    .classList.remove('green', 'black', 'white', 'blue');
-  document.getElementById('oppDiv').classList.add('red');
-});
+      oppDiv.classList.add(divColor);
+    });
+  });
 
-document.getElementById('oppGreen').addEventListener('click', event => {
-  event.preventDefault();
+// Opponent adding/subtracting buttons
+document
+  .getElementById('oppMath')
+  .querySelectorAll('button')
+  .forEach(button => {
+    button.addEventListener('click', event => {
+      event.preventDefault();
 
-  document
-    .getElementById('oppDiv')
-    .classList.remove('red', 'black', 'white', 'blue');
-  document.getElementById('oppDiv').classList.add('green');
-});
+      const buttonId = event.target.id;
 
-document.getElementById('oppBlack').addEventListener('click', event => {
-  event.preventDefault();
+      // Using switch case by targeting button id
+      switch (buttonId) {
+        case 'oppPlus':
+          oppLife += 1;
+          opp.innerText = oppLife;
+          break;
+        case 'oppMinus':
+          if (oppLife > 0) {
+            oppLife -= 1;
+            opp.innerText = oppLife;
+          }
+          break;
+        case 'oppPlusFive':
+          oppLife += 5;
+          opp.innerText = oppLife;
+          break;
+        case 'oppPlusTen':
+          oppLife += 10;
+          opp.innerText = oppLife;
+          break;
+        case 'oppPlusIn': {
+          const oppPlusInput = document.getElementById('oppPlusInput').value;
+          oppLife += +oppPlusInput;
+          opp.innerText = oppLife;
+          break;
+        }
+        case 'oppMinusFive':
+          if (oppLife > 0 && oppLife - 5 >= 0) {
+            // Making sure life won't go below 0 when calculated
+            oppLife -= 5;
+            opp.innerText = oppLife;
+          } else if (oppLife > 0) {
+            oppLife = 0;
+            opp.innerText = oppLife;
+          }
+          break;
+        case 'oppMinusTen':
+          if (oppLife > 0 && oppLife - 10 >= 0) {
+            // Making sure life won't go below 0 when calculated
+            oppLife -= 10;
+            opp.innerText = oppLife;
+          } else if (oppLife > 0) {
+            oppLife = 0;
+            opp.innerText = oppLife;
+          }
+          break;
+        case 'oppMinusIn': {
+          const oppMinusInput = document.getElementById('oppMinusInput').value;
+          if (oppLife > 0 && oppLife - oppMinusInput >= 0) {
+            // Making sure life won't go below 0 when calculated
+            oppLife -= oppMinusInput;
+            opp.innerText = oppLife;
+          } else if (oppLife > 0) {
+            oppLife = 0;
+            opp.innerText = oppLife;
+          }
+          break;
+        }
+        default:
+          break;
+      }
+    });
+  });
 
-  document
-    .getElementById('oppDiv')
-    .classList.remove('red', 'green', 'white', 'blue');
-  document.getElementById('oppDiv').classList.add('black');
-});
-
-document.getElementById('oppWhite').addEventListener('click', event => {
-  event.preventDefault();
-
-  document
-    .getElementById('oppDiv')
-    .classList.remove('red', 'green', 'black', 'blue');
-  document.getElementById('oppDiv').classList.add('white');
-});
-
-document.getElementById('oppBlue').addEventListener('click', event => {
-  event.preventDefault();
-
-  document
-    .getElementById('oppDiv')
-    .classList.remove('red', 'green', 'black', 'white');
-  document.getElementById('oppDiv').classList.add('blue');
-});
-
-document.getElementById('oppPlus').addEventListener('click', event => {
-  event.preventDefault();
-
-  oppLife += 1;
-  opp.innerText = oppLife;
-});
-
-document.getElementById('oppMinus').addEventListener('click', event => {
-  event.preventDefault();
-
-  if (oppLife > 0) {
-    oppLife -= 1;
-    opp.innerText = oppLife;
-  }
-});
-
-document.getElementById('oppPlusFive').addEventListener('click', event => {
-  event.preventDefault();
-
-  oppLife += 5;
-  opp.innerText = oppLife;
-});
-
-document.getElementById('oppPlusTen').addEventListener('click', event => {
-  event.preventDefault();
-
-  oppLife += 10;
-  opp.innerText = oppLife;
-});
-
-document.getElementById('oppPlusIn').addEventListener('click', event => {
-  event.preventDefault();
-
-  const oppPlusInput = document.getElementById('oppPlusInput').value;
-  console.log(oppPlusInput);
-  oppLife += +oppPlusInput;
-  opp.innerText = oppLife;
-});
-
-document.getElementById('oppMinusFive').addEventListener('click', event => {
-  event.preventDefault();
-
-  if (oppLife > 0 && oppLife - 5 >= 0) {
-    oppLife -= 5;
-    opp.innerText = oppLife;
-  } else if (oppLife > 0) {
-    oppLife = 0;
-    opp.innerText = oppLife;
-  }
-});
-
-document.getElementById('oppMinusTen').addEventListener('click', event => {
-  event.preventDefault();
-
-  if (oppLife > 0 && oppLife - 10 >= 0) {
-    oppLife -= 10;
-    opp.innerText = oppLife;
-  } else if (oppLife > 0) {
-    oppLife = 0;
-    opp.innerText = oppLife;
-  }
-});
-
-document.getElementById('oppMinusIn').addEventListener('click', event => {
-  event.preventDefault();
-
-  const oppMinusInput = document.getElementById('oppMinusInput').value;
-  if (oppLife > 0 && oppLife - oppMinusInput >= 0) {
-    oppLife -= oppMinusInput;
-    opp.innerText = oppLife;
-  } else if (oppLife > 0) {
-    oppLife = 0;
-    opp.innerText = oppLife;
-  }
-});
-
+// Starting user life and assigning it to p tag
 let userLife = 20;
 user.innerText = userLife;
 
-document.getElementById('userRed').addEventListener('click', event => {
-  event.preventDefault();
+// User color selector buttons
+document
+  .getElementById('userColor')
+  .querySelectorAll('button')
+  .forEach(button => {
+    button.addEventListener('click', event => {
+      event.preventDefault();
+      const divColor = event.target.className;
 
-  document
-    .getElementById('userDiv')
-    .classList.remove('green', 'black', 'white', 'blue');
-  document.getElementById('userDiv').classList.add('red');
-});
+      colors
+        .filter(color => color !== divColor)
+        .forEach(color => {
+          userDiv.classList.remove(color);
+        });
 
-document.getElementById('userGreen').addEventListener('click', event => {
-  event.preventDefault();
+      userDiv.classList.add(divColor);
+    });
+  });
 
-  document
-    .getElementById('userDiv')
-    .classList.remove('red', 'black', 'white', 'blue');
-  document.getElementById('userDiv').classList.add('green');
-});
+// User add/subtract buttons
+document
+  .getElementById('userMath')
+  .querySelectorAll('button')
+  .forEach(button => {
+    button.addEventListener('click', event => {
+      event.preventDefault();
 
-document.getElementById('userBlack').addEventListener('click', event => {
-  event.preventDefault();
+      const buttonId = event.target.id;
 
-  document
-    .getElementById('userDiv')
-    .classList.remove('red', 'green', 'white', 'blue');
-  document.getElementById('userDiv').classList.add('black');
-});
-
-document.getElementById('userWhite').addEventListener('click', event => {
-  event.preventDefault();
-
-  document
-    .getElementById('userDiv')
-    .classList.remove('red', 'green', 'black', 'blue');
-  document.getElementById('userDiv').classList.add('white');
-});
-
-document.getElementById('userBlue').addEventListener('click', event => {
-  event.preventDefault();
-
-  document
-    .getElementById('userDiv')
-    .classList.remove('red', 'green', 'black', 'white');
-  document.getElementById('userDiv').classList.add('blue');
-});
-
-document.getElementById('userPlus').addEventListener('click', event => {
-  event.preventDefault();
-
-  userLife += 1;
-  user.innerText = userLife;
-});
-
-document.getElementById('userMinus').addEventListener('click', event => {
-  event.preventDefault();
-
-  if (userLife > 0) {
-    userLife -= 1;
-    user.innerText = userLife;
-  }
-});
-
-document.getElementById('userPlusFive').addEventListener('click', event => {
-  event.preventDefault();
-
-  userLife += 5;
-  user.innerText = userLife;
-});
-
-document.getElementById('userPlusTen').addEventListener('click', event => {
-  event.preventDefault();
-
-  userLife += 10;
-  user.innerText = userLife;
-});
-
-document.getElementById('userPlusIn').addEventListener('click', event => {
-  event.preventDefault();
-
-  const userPlusInput = document.getElementById('userPlusInput').value;
-  userLife += +userPlusInput;
-  user.innerText = userLife;
-});
-
-document.getElementById('userMinusFive').addEventListener('click', event => {
-  event.preventDefault();
-
-  if (userLife > 0 && userLife - 5 >= 0) {
-    userLife -= 5;
-    user.innerText = userLife;
-  } else if (userLife > 0) {
-    userLife = 0;
-    user.innerText = userLife;
-  }
-});
-
-document.getElementById('userMinusTen').addEventListener('click', event => {
-  event.preventDefault();
-
-  if (userLife > 0 && userLife - 10 >= 0) {
-    userLife -= 10;
-    user.innerText = userLife;
-  } else if (userLife > 0) {
-    userLife = 0;
-    user.innerText = userLife;
-  }
-});
-
-document.getElementById('userMinusIn').addEventListener('click', event => {
-  event.preventDefault();
-
-  const userMinusInput = document.getElementById('userMinusInput').value;
-  if (userLife > 0 && userLife - userMinusInput >= 0) {
-    userLife -= userMinusInput;
-    user.innerText = userLife;
-  } else if (userLife > 0) {
-    userLife = 0;
-    user.innerText = userLife;
-  }
-});
+      // Using switch case by targeting button id
+      switch (buttonId) {
+        case 'userPlus':
+          userLife += 1;
+          user.innerText = userLife;
+          break;
+        case 'userMinus':
+          if (userLife > 0) {
+            userLife -= 1;
+            user.innerText = userLife;
+          }
+          break;
+        case 'userPlusFive':
+          userLife += 5;
+          user.innerText = userLife;
+          break;
+        case 'userPlusTen':
+          userLife += 10;
+          user.innerText = userLife;
+          break;
+        case 'userPlusIn': {
+          const userPlusInput = document.getElementById('userPlusInput').value;
+          userLife += +userPlusInput;
+          user.innerText = userLife;
+          break;
+        }
+        case 'userMinusFive':
+          if (userLife > 0 && userLife - 5 >= 0) {
+            // Making sure life won't go below 0 when calculated
+            userLife -= 5;
+            user.innerText = userLife;
+          } else if (userLife > 0) {
+            userLife = 0;
+            user.innerText = userLife;
+          }
+          break;
+        case 'userMinusTen':
+          if (userLife > 0 && userLife - 10 >= 0) {
+            // Making sure life won't go below 0 when calculated
+            userLife -= 10;
+            user.innerText = userLife;
+          } else if (userLife > 0) {
+            userLife = 0;
+            user.innerText = userLife;
+          }
+          break;
+        case 'userMinusIn': {
+          const userMinusInput = document.getElementById('userMinusInput')
+            .value;
+          if (userLife > 0 && userLife - userMinusInput >= 0) {
+            // Making sure life won't go below 0 when calculated
+            userLife -= userMinusInput;
+            user.innerText = userLife;
+          } else if (userLife > 0) {
+            userLife = 0;
+            user.innerText = userLife;
+          }
+          break;
+        }
+        default:
+          break;
+      }
+    });
+  });
