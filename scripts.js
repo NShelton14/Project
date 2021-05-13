@@ -15,7 +15,7 @@ document
   .forEach(button => {
     button.addEventListener('click', event => {
       event.preventDefault();
-      const divColor = event.target.className;
+      const divColor = event.target.className.split(' ', 1);
       // Selecting class name instead of using id
       colors
         .filter(color => color !== divColor)
@@ -112,7 +112,7 @@ document
   .forEach(button => {
     button.addEventListener('click', event => {
       event.preventDefault();
-      const divColor = event.target.className;
+      const divColor = event.target.className.split(' ', 1);
 
       colors
         .filter(color => color !== divColor)
