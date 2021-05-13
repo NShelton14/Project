@@ -95,6 +95,11 @@ document
           }
           break;
         }
+        case 'oppReset':
+          document.getElementById('oppForm').reset();
+          oppLife = 20;
+          opp.innerText = oppLife;
+          break;
         default:
           break;
       }
@@ -193,6 +198,11 @@ document
           }
           break;
         }
+        case 'userReset':
+          document.getElementById('userForm').reset();
+          userLife = 20;
+          user.innerText = userLife;
+          break;
         default:
           break;
       }
