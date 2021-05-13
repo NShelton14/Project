@@ -24,22 +24,25 @@
       </div>
 
       <div id="oppMath" class="centered-opp">
-        <h4>Opponent</h4>
-        <p id="opp"></p>
-        <button id="oppPlus">+</button>
-        <button id="oppMinus">-</button>
-        <div>
-          <button id="oppPlusFive">+5</button>
-          <button id="oppPlusTen">+10</button>
-          <button id="oppPlusIn">+...</button>
-          <input type="number" id="oppPlusInput" />
-        </div>
-        <div>
-          <button id="oppMinusFive">-5</button>
-          <button id="oppMinusTen">-10</button>
-          <button id="oppMinusIn">-...</button>
-          <input type="number" id="oppMinusInput" />
-        </div>
+        <form id="oppForm">
+          <h4>Opponent</h4>
+          <p id="opp"></p>
+          <button id="oppPlus">+</button>
+          <button id="oppMinus">-</button>
+          <button type="reset" id="oppReset">Reset</button>
+          <div>
+            <button id="oppPlusFive">+5</button>
+            <button id="oppPlusTen">+10</button>
+            <button id="oppPlusIn">+...</button>
+            <input type="number" id="oppPlusInput" />
+          </div>
+          <div>
+            <button id="oppMinusFive">-5</button>
+            <button id="oppMinusTen">-10</button>
+            <button id="oppMinusIn">-...</button>
+            <input type="number" id="oppMinusInput" />
+          </div>
+        </form>
       </div>
     </div>
 
@@ -53,22 +56,25 @@
       </div>
 
       <div id="userMath" class="centered-user">
-        <h4>User</h4>
-        <p id="user"></p>
-        <button id="userPlus">+</button>
-        <button id="userMinus">-</button>
-        <div>
-          <button id="userPlusFive">+5</button>
-          <button id="userPlusTen">+10</button>
-          <button id="userPlusIn">+...</button>
-          <input type="number" id="userPlusInput" />
-        </div>
-        <div>
-          <button id="userMinusFive">-5</button>
-          <button id="userMinusTen">-10</button>
-          <button id="userMinusIn">-...</button>
-          <input type="number" id="userMinusInput" />
-        </div>
+        <form id="userForm">
+          <h4>User</h4>
+          <p id="user"></p>
+          <button id="userPlus">+</button>
+          <button id="userMinus">-</button>
+          <button type="reset" id="userReset">Reset</button>
+          <div>
+            <button id="userPlusFive">+5</button>
+            <button id="userPlusTen">+10</button>
+            <button id="userPlusIn">+...</button>
+            <input type="number" id="userPlusInput" />
+          </div>
+          <div>
+            <button id="userMinusFive">-5</button>
+            <button id="userMinusTen">-10</button>
+            <button id="userMinusIn">-...</button>
+            <input type="number" id="userMinusInput" />
+          </div>
+        </form>
       </div>
     </div>
     <script src="./scripts.js" type="module"></script>
